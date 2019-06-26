@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:c="clr-namespace:TodosSample.Controls"
+       mc:Ignorable="d"
+       xmlns:local="clr-namespace:TodosSample.Views"
+       Title="TodosSample"
+       x:Class="TodosSample.AppShell">
+    
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">#fefefe</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.ForegroundColor" Value="#3d83ff" />
+                <Setter Property="Shell.TitleColor" Value="#3d83ff" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="#3d83ff"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="Gray"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="#3d83ff"/>
+            </Style>
+            <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!-- Your Pages -->
+    <c:TodoTabBar Style="{StaticResource BaseStyle}">
+        <c:TodoTabBar.LargeTab>
+            <Tab Title="New Task" Icon="tab_newtask.png">
+                <ShellContent ContentTemplate="{DataTemplate local:NewTaskPage}" />
+            </Tab>
+        </c:TodoTabBar.LargeTab>
+        
+        <Tab Title="Dashboard" Icon="tab_dashboard.png">
+            <ShellContent ContentTemplate="{DataTemplate local:DashboardPage}" />
+        </Tab>
+        
+        <Tab Title="Profile" Icon="tab_profile.png">
+            <ShellContent ContentTemplate="{DataTemplate local:ProfilePage}" />
+        </Tab>
+    </c:TodoTabBar>
+
+</Shell>
