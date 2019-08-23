@@ -147,7 +147,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\ShellCustomization\ShellCustomization.csproj">
-      <Project>{1324BFF1-EE20-463F-B3C1-28E70E0D48C3}</Project>
+      <Project>{04FBCFB4-9867-4A9C-99FC-0A21748C8F42}</Project>
       <Name>ShellCustomization</Name>
     </ProjectReference>
   </ItemGroup>
